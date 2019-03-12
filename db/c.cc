@@ -42,6 +42,7 @@
 #include "utilities/merge_operators.h"
 
 extern "C" void bz_internal_error(int errcode) {
+  (void)(errcode); // supress unused argument warnings
   printf("fatal error in bzip2");
   exit(1);
 }
