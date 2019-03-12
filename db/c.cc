@@ -41,6 +41,11 @@
 #include "rocksdb/perf_context.h"
 #include "utilities/merge_operators.h"
 
+extern "C" void bz_internal_error(int errcode) {
+  printf("fatal error in bzip2");
+  exit(1);
+}
+
 using rocksdb::BytewiseComparator;
 using rocksdb::Cache;
 using rocksdb::ColumnFamilyDescriptor;
